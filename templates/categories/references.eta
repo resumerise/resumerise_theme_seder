@@ -1,8 +1,6 @@
-<section id="references" class="references">
+<section class="section references" id="references">
 	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
-		<header class="section__title">
-			<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
-		</header>
+		<header class="section__title"><%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %></header>
 	<% } %>
 	<div class="article-container grid">
 		<% it.resume?.references.forEach(function(reference) { %>
@@ -19,7 +17,7 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
 						value: reference.reference,
-						classes: 'article__subtitle'
+						classes: 'article__description'
 					}) %>
 				</div>
 			</article>

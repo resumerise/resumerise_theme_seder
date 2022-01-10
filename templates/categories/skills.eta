@@ -1,8 +1,6 @@
-<section id="skills" class="skills">
+<section class="section skills" id="skills">
 	<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
-		<header class="section__title">
-			<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
-		</header>
+		<header class="section__title"><%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %></header>
 	<% } %>
 	<div class="article-container grid">
 		<% it.resume?.skills.forEach(function(skill) { %>
