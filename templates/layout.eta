@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 		<title><%= it.resume.basics?.name ? it.resume.basics.name : ''%></title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 		<style>
 			<%~ it.css %>
 			<%~ it.widgetCss %>
@@ -27,20 +28,12 @@
 		</div>
 
 		<main class="main container">
-			<div id="scene">
-				<div data-depth="-0.5" class="para_box">
-					<div class="circle"></div>
-				</div>
-				<div data-depth="0.75" class="para_box">
-					<div class="square"></div>
-				</div>
-				<div data-depth="1" class="para_box">
-					<div class="triangle"></div>
-				</div>
-				<div data-depth="-0.375" class="para_box">
-					<div class="parallelogram"></div>
-				</div>
-			</div>
+
+		<div class="circle animate__animated animate__jello animate__infinite	infinite"></div>
+		<div class="triangle animate__animated animate__bounce animate__infinite	infinite"></div>
+		<div class="rectangle animate__animated animate__hinge animate__infinite	infinite"></div>
+		<div class="square animate__animated animate__swing animate__infinite	infinite"></div>
+
 			<!-- BASICS -->
 			<%~ include("basic", {
 				resume: it.resume,
@@ -125,12 +118,5 @@
 				</div>
 			</div>
 		</main>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-		<script>
-			var scene = document.getElementById('scene');
-			var parallaxInstance = new Parallax(scene);
-			parallaxInstance.friction(0.2, 0.2);
-</script>
 	</body>
 </html>

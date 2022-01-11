@@ -288,20 +288,20 @@ article {
     text-align: center;
 }
 
-#scene {
+.main {
     position: relative;
 }
 
 .circle,
 .square,
 .triangle,
-.parallelogram {
+.rectangle {
     z-index: -11 !important;
 }
 
 .circle,
 .square,
-.parallelogram {
+.rectangle {
     width: 50px;
     height: 50px;
     background: var(--text-color-light);
@@ -327,26 +327,16 @@ article {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 50px solid var(--third-color);
-    ;
-    top: 4rem;
-    left: 40rem;
+    top: 10rem;
+    left: 30rem;
 }
 
-.parallelogram {
+.rectangle {
     top: 24rem;
-    left: 56rem;
+    left: 25rem;
     width: 100px;
     height: 50px;
-    transform: skew(20deg);
     background-color: var(--fourth-color);
-}
-
-.para_box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 /*========== PROFILES ==========*/
