@@ -28,11 +28,20 @@
 		</div>
 
 		<main class="main container">
-
-		<div class="circle animate__animated animate__jello animate__infinite	infinite"></div>
-		<div class="triangle animate__animated animate__bounce animate__infinite	infinite"></div>
-		<div class="rectangle animate__animated animate__hinge animate__infinite	infinite"></div>
-		<div class="square animate__animated animate__swing animate__infinite	infinite"></div>
+			<div id="scene">
+				<div data-depth="-0.5" class="para_box">
+					<div class="circle"></div>
+				</div>
+				<div data-depth="0.75" class="para_box">
+					<div class="square"></div>
+				</div>
+				<div data-depth="1" class="para_box">
+					<div class="triangle"></div>
+				</div>
+				<div data-depth="-0.375" class="para_box">
+					<div class="parallelogram"></div>
+				</div>
+			</div>
 
 			<!-- BASICS -->
 			<%~ include("basic", {
@@ -118,5 +127,12 @@
 				</div>
 			</div>
 		</main>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+		<script>
+			var scene = document.getElementById('scene');
+			var parallaxInstance = new Parallax(scene);
+			parallaxInstance.friction(0.2, 0.2);
+		</script>
 	</body>
 </html>
