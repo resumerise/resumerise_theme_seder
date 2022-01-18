@@ -5,90 +5,134 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 		<title><%= it.resume.basics?.name ? it.resume.basics.name : ''%></title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 		<style>
 			<%~ it.css %>
 			<%~ it.widgetCss %>
 		</style>
 	</head>
 	<body>
-		<main>
+		<div class="area">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+
+		<main class="main container">
+			<div id="scene">
+				<div data-depth="-0.5" class="para_box">
+					<div class="circle"></div>
+				</div>
+				<div data-depth="0.75" class="para_box">
+					<div class="square"></div>
+				</div>
+				<div data-depth="1" class="para_box">
+					<div class="triangle"></div>
+				</div>
+				<div data-depth="-0.375" class="para_box">
+					<div class="parallelogram"></div>
+				</div>
+			</div>
+
 			<!-- BASICS -->
 			<%~ include("basic", {
 				resume: it.resume,
 				formatDate: it.formatDate
 			}) %>
-			
-			<!-- PROJECT -->
-			<%~ include("project", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
 
-			<!-- WORK -->
-			<%~ include("work", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
+			<div class="main-wrapper">
+				<div class="left">
+					<!-- PROJECT -->
+					<%~ include("project", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
 
-			<!-- EDUCATION -->
-			<%~ include("education", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- PUBLICATION -->
-			<%~ include("publication", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- REFERENCE -->
-			<%~ include("reference", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- VOLUNTEER -->
-			<%~ include("volunteer", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- CERTIFICATION -->
-			<%~ include("certification", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
+					<!-- WORK -->
+					<%~ include("work", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
 
-			<!-- SKILLS -->
-			<%~ include("skills", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- AWARDS -->
-			<%~ include("awards", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- INTEREST -->
-			<%~ include("interest", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
+					<!-- EDUCATION -->
+					<%~ include("education", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- PUBLICATION -->
+					<%~ include("publication", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- PROFILE -->
+					<%~ include("profile", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+				</div>
+				
+				<div class="right">
+					<!-- CERTIFICATION -->
+					<%~ include("certification", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
 
-			<!-- LANGUAGE -->
-			<%~ include("language", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
+					<!-- SKILLS -->
+					<%~ include("skills", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- AWARDS -->
+					<%~ include("awards", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- INTEREST -->
+					<%~ include("interest", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
 
-			<!-- PROFILE -->
-			<%~ include("profile", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
+					<!-- LANGUAGE -->
+					<%~ include("language", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+
+					<!-- REFERENCE -->
+					<%~ include("reference", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- VOLUNTEER -->
+					<%~ include("volunteer", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+				</div>
+			</div>
 		</main>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+		<script>
+			var scene = document.getElementById('scene');
+			var parallaxInstance = new Parallax(scene);
+			parallaxInstance.friction(0.2, 0.2);
+		</script>
 	</body>
 </html>

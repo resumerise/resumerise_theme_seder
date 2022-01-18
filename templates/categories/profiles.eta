@@ -1,8 +1,6 @@
-<section id="profiles" class="profiles">
+<section class="section profiles" id="profiles">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-        <header class="section__title">
-            <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-        </header>
+        <header class="section__title"><%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %></header>
     <% } %>
     <div class="article-container grid">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
