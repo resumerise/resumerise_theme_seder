@@ -23,7 +23,6 @@
                         classes: 'article__url'
                     }) %>
                     <%~ include('date-range', {
-                        formatDate: it.formatDate,
                         startDate: work.startDate,
                         endDate: work.endDate,
                         present: work.present,
